@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutorials - AI & Innovation Club</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .fb-embed-container {
+            display: flex;
+            justify-content: center;
+            background: var(--card-bg);
+            padding: 15px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+        }
+
+        body.dark-mode .fb-embed-container {
+            background-color: #1e2430;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .fb-embed-container iframe {
+            max-width: 100% !important;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-cpu me-2 text-primary"></i>AI & Innovation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
+                    <li class="nav-item"><a class="nav-link" href="challenges.html">Challenges</a></li>
+                    <li class="nav-item"><a class="nav-link" href="api-demo.html">AI News</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="tutorials.html">Tutorials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="theme-toggle" class="btn btn-outline-light btn-sm rounded-pill px-3">
+                            <i class="bi bi-moon-stars-fill me-1"></i> Theme
+                        </button>
+                    </li>
+
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center" id="auth-nav-container">
+                        <a class="btn btn-outline-info btn-sm rounded-pill px-3 fw-semibold" href="login.html">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-white text-center">
+        <div class="container px-4">
+            <h1 class="display-4 fw-bold mb-3">Learning <span class="text-info">Resources</span></h1>
+            <p class="lead mb-0 opacity-75 mx-auto" style="max-width: 650px;">
+                Master AI with our curated video tutorials and explore real-time breakthroughs from industry leaders.
+            </p>
+        </div>
+    </header>
+
+    <main class="container py-5 mb-5">
+        <div class="row g-5 align-items-start">
+            <div class="col-lg-7">
+                <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-2">
+                    <h3 class="fw-bold mb-0">
+                        <i class="bi bi-youtube text-danger me-2"></i>Official Video Guides
+                    </h3>
+                    <span class="badge bg-danger rounded-pill px-3 py-2">YouTube Embeds</span>
+                </div>
+                
+                <div class="row g-4">
+                    <div class="col-12 col-md-6 col-lg-12 col-xl-6">
+                        <div class="card feature-card shadow-sm h-100 overflow-hidden">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube-nocookie.com/embed/aircAruvnKk?rel=0" title="Intro to Neural Networks" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge bg-primary w-auto align-self-start mb-2">Deep Learning</span>
+                                <h5 class="fw-bold mb-2">Intro to Neural Networks</h5>
+                                <p class="text-muted small mb-3">Learn the mathematical foundations behind deep learning and how to build your first model in Python.</p>
+                                <div class="mt-auto pt-2 border-top d-flex justify-content-between align-items-center text-muted small">
+                                    <span><i class="bi bi-clock me-1"></i>19 mins</span>
+                                    <span class="text-success fw-semibold">Beginner</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-12 col-xl-6">
+                        <div class="card feature-card shadow-sm h-100 overflow-hidden">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.youtube-nocookie.com/embed/Yq0QkCxoTHM?rel=0" title="Google's AI Course for Beginners" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                            </div>
+                            <div class="card-body p-4 d-flex flex-column">
+                                <span class="badge bg-info text-dark w-auto align-self-start mb-2">AI Foundations</span>
+                                <h5 class="fw-bold mb-2">Google's AI Course for Beginners</h5>
+                                <p class="text-muted small mb-3">A concise 10-minute walkthrough of modern Generative AI principles, prompt optimization, and cloud toolkits.</p>
+                                <div class="mt-auto pt-2 border-top d-flex justify-content-between align-items-center text-muted small">
+                                    <span><i class="bi bi-clock me-1"></i>10 mins</span>
+                                    <span class="text-success fw-semibold">All Levels</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="d-flex align-items-center justify-content-between mb-4 border-bottom pb-2">
+                    <h3 class="fw-bold mb-0">
+                        <i class="bi bi-facebook text-primary me-2"></i>Live Updates
+                    </h3>
+                    <span class="badge bg-primary rounded-pill px-3 py-2">Facebook Post</span>
+                </div>
+
+                <div class="fb-embed-container">
+                    <iframe 
+                        src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmetaai%2Fposts%2Fpfbid0UwxDk2xBRrm5qmBFXgdnwqygPk7uBHKWHaYQX2S1HtaERme76SR4eYkwyTr4XNBil&show_text=true&width=500" 
+                        width="500" 
+                        height="671" 
+                        style="border:none;overflow:hidden" 
+                        scrolling="no" 
+                        frameborder="0" 
+                        allowfullscreen="true" 
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-dark text-white py-4 text-center mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 AI & Innovation Club. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i class="bi bi-github fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i class="bi bi-discord fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 text-decoration-none"><i class="bi bi-linkedin fs-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

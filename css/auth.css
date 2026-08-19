@@ -1,0 +1,85 @@
+/* center font*/
+.auth-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 15px;
+}
+
+.auth-glass-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+    padding: 35px 30px;
+    width: 100%;
+    max-width: 480px;
+    color: #ffffff;
+}
+
+
+.auth-nav-pills {
+    background: rgba(0, 0, 0, 0.25);
+    border-radius: 12px;
+    padding: 4px;
+    display: flex;
+    margin-bottom: 25px;
+}
+
+.auth-nav-pills .nav-link {
+    flex: 1;
+    color: rgba(255, 255, 255, 0.7);
+    font-weight: 600;
+    border-radius: 9px;
+    padding: 9px 0;
+    text-align: center;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.auth-nav-pills .nav-link.active {
+    background-color: #0d6efd;
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(13, 110, 253, 0.4);
+}
+
+
+.glass-input, .glass-select {
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.3) !important;
+    color: #ffffff !important;
+    border-radius: 10px;
+}
+
+.glass-input:focus, .glass-select:focus {
+    background: rgba(255, 255, 255, 0.22) !important;
+    border-color: #0dcaf0 !important;
+    box-shadow: 0 0 12px rgba(13, 202, 240, 0.35) !important;
+    color: #ffffff !important;
+}
+
+.glass-input::placeholder {
+    color: rgba(255, 255, 255, 0.55);
+}
+
+.glass-select option {
+    background-color: #1a202c;
+    color: #ffffff;
+}
+
+.form-check-input {
+    background-color: rgba(255, 255, 255, 0.2);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+.invalid-feedback {
+    color: #ff9999;
+}

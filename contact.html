@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - AI & Innovation Club</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-cpu me-2 text-primary"></i>AI & Innovation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
+                    <li class="nav-item"><a class="nav-link" href="challenges.html">Challenges</a></li>
+                    <li class="nav-item"><a class="nav-link" href="api-demo.html">AI News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tutorials.html">Tutorials</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
+                    
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="theme-toggle" class="btn btn-outline-light btn-sm rounded-pill px-3">
+                            <i class="bi bi-moon-stars-fill me-1"></i> Theme
+                        </button>
+                    </li>
+
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center" id="auth-nav-container">
+                        <a class="btn btn-outline-info btn-sm rounded-pill px-3 fw-semibold" href="login.html">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Login 
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-white d-flex align-items-center justify-content-center text-center py-5">
+        <div class="container px-4 py-4">
+            <h1 class="display-4 fw-bold mb-2">Get in <span class="text-info">Touch</span></h1>
+            <p class="lead mb-0 opacity-75">Register as a member or drop by our HQ.</p>
+        </div>
+    </header>
+
+    <section class="container py-5 mb-5">
+        <div class="row g-5">
+            <div class="col-lg-6">
+                <div class="glass-card p-4 p-md-5 h-100">
+                    <h3 class="fw-bold mb-2">Member Registration</h3>
+                    <p class="text-muted small mb-4">Your draft is auto-saved locally. <span id="save-status" class="text-success fw-bold" style="display:none;">Saved!</span></p>
+                    
+                    <form id="registrationForm" class="needs-validation" novalidate>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">Full Name</label>
+                            <input type="text" class="form-control" id="fullName" placeholder="e.g. John Doe" required>
+                            <div class="invalid-feedback">Please enter your full name.</div>
+                            <div class="valid-feedback">Looks good!</div>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold">University Email</label>
+                            <input type="email" class="form-control" id="userEmail" placeholder="student@domain.edu" required>
+                            <div class="invalid-feedback">Please provide a valid email address.</div>
+                        </div>
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold">Primary Interest</label>
+                            <select class="form-select" id="primaryInterest" required>
+                                <option value="" disabled selected>Select an area of focus...</option>
+                                <option value="Machine Learning">Machine Learning</option>
+                                <option value="Web Development & APIs">Web Development & APIs</option>
+                                <option value="Robotics & Hardware">Robotics & Hardware</option>
+                                <option value="Sustainability Tech">Sustainability Tech</option>
+                            </select>
+                            <div class="invalid-feedback">Please select your primary interest.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 fw-bold py-2">Submit Application</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="glass-card p-4 p-md-5 h-100">
+                    <h3 class="fw-bold mb-4">Our Headquarters</h3>
+                    
+                    <div class="ratio ratio-16x9 mb-4 rounded-3 overflow-hidden shadow-sm">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127482.68658826727!2d101.61694936306308!3d3.1385035544710183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362bfc0402ce%3A0xb5e0c52bb1978255!2sKuala%20Lumpur%2C%20Federal%20Territory%20of%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1716900000000!5m2!1sen!2smy" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+
+                    <div class="d-flex align-items-center justify-content-between">
+                        <div>
+                            <h6 class="fw-bold mb-1 d-flex align-items-center">
+                                <i class="bi bi-geo-alt-fill text-danger me-2"></i>Address
+                                <span id="api-weather-badge" class="badge bg-info text-dark ms-2 fw-semibold">
+                                    <i class="bi bi-hourglass-split spinner-border-sm"></i> Fetching weather...
+                                </span>
+                            </h6>
+                            <p class="text-muted small mb-0">Innovation Hub, Block C<br>Kuala Lumpur, Malaysia</p>
+                        </div>
+                        
+                        <div>
+                            <h6 class="fw-bold mb-2 text-end">Share</h6>
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com" target="_blank" class="social-share-btn bg-primary text-decoration-none" title="Share on Facebook">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://example.com" target="_blank" class="social-share-btn text-decoration-none ms-2" style="background-color: #0077b5;" title="Share on LinkedIn">
+                                <i class="bi bi-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div id="cookie-banner" class="alert alert-dark shadow-lg d-flex flex-column flex-md-row align-items-center justify-content-between rounded-4 p-3 border border-secondary">
+        <div class="mb-3 mb-md-0 me-md-4">
+            <strong><i class="bi bi-cookie me-2 text-warning"></i>We use cookies!</strong> 
+            <span class="small">We use cookies to save your theme preferences and track analytics.</span>
+        </div>
+        <button id="accept-cookies" class="btn btn-primary btn-sm px-4 fw-bold rounded-pill">Got it!</button>
+    </div>
+
+    <footer class="bg-dark text-white py-4 text-center mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 AI & Innovation Club. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i class="bi bi-github fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i class="bi bi-discord fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 text-decoration-none"><i class="bi bi-linkedin fs-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="js/main.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            if (!getCookie("siteConsent")) {
+                $("#cookie-banner").css("display", "flex").hide().fadeIn(400);
+            }
+
+            $(document).on("click", "#accept-cookies", function (e) {
+                e.preventDefault();
+                setCookie("siteConsent", "accepted", 30);
+                $("#cookie-banner").fadeOut(300);
+            });
+
+            if (sessionStorage.getItem('draft_name')) $('#fullName').val(sessionStorage.getItem('draft_name'));
+            if (sessionStorage.getItem('draft_email')) $('#userEmail').val(sessionStorage.getItem('draft_email'));
+            if (sessionStorage.getItem('draft_interest')) $('#primaryInterest').val(sessionStorage.getItem('draft_interest'));
+
+            $('#fullName, #userEmail, #primaryInterest').on('input change', function () {
+                sessionStorage.setItem('draft_name', $('#fullName').val());
+                sessionStorage.setItem('draft_email', $('#userEmail').val());
+                sessionStorage.setItem('draft_interest', $('#primaryInterest').val());
+                $('#save-status').stop(true, true).fadeIn(200).fadeOut(1500);
+            });
+
+            $('#registrationForm').on('submit', function (event) {
+                if (!this.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    event.preventDefault();
+                    alert("✅ Application Submitted Successfully!");
+                    sessionStorage.removeItem('draft_name');
+                    sessionStorage.removeItem('draft_email');
+                    sessionStorage.removeItem('draft_interest');
+                    this.reset();
+                    $(this).removeClass('was-validated');
+                    return;
+                }
+                $(this).addClass('was-validated');
+            });
+
+            const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=3.1390&longitude=101.6869&current_weather=true";
+
+            $.ajax({
+                url: apiUrl,
+                method: "GET",
+                success: function (response) {
+                    let temp = response.current_weather.temperature;
+                    $('#api-weather-badge')
+                        .removeClass('bg-info text-dark')
+                        .addClass('bg-primary text-white')
+                        .html(`<i class="bi bi-thermometer-half"></i> KL Temp: ${temp}°C`);
+                },
+                error: function () {
+                    $('#api-weather-badge')
+                        .removeClass('bg-info')
+                        .addClass('bg-secondary')
+                        .html(`<i class="bi bi-cloud-slash"></i> Weather Unavailable`);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

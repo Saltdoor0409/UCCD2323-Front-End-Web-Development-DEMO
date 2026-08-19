@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - AI & Innovation Club</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <style>
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--card-bg);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+            margin-top: -60px;
+            background-color: var(--card-bg);
+        }
+        
+        .card-header-bg {
+            height: 100px;
+            border-top-left-radius: var(--bs-card-inner-border-radius);
+            border-top-right-radius: var(--bs-card-inner-border-radius);
+        }
+        
+        .org-node {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 24px 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid #1a2a6c;
+            height: 100%;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .org-node:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12) !important;
+        }
+
+        body.dark-mode .org-node {
+            background-color: #1e2430;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-top: 4px solid #38bdf8;
+        }
+
+        body.dark-mode .stat-number {
+            color: #ffffff !important;
+        }
+
+        body.dark-mode .content-section {
+            background-color: #12161f;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="index.html">
+                <i class="bi bi-cpu me-2 text-primary"></i>AI & Innovation
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="about.html">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link" href="workshops.html">Workshops</a></li>
+                    <li class="nav-item"><a class="nav-link" href="challenges.html">Challenges</a></li>
+                    <li class="nav-item"><a class="nav-link" href="api-demo.html">AI News</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tutorials.html">Tutorials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+                    <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                        <button id="theme-toggle" class="btn btn-outline-light btn-sm rounded-pill px-3">
+                            <i class="bi bi-moon-stars-fill me-1"></i> Theme
+                        </button>
+                    </li>
+
+                    <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center" id="auth-nav-container">
+                        <a class="btn btn-outline-info btn-sm rounded-pill px-3 fw-semibold" href="login.html">
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Login
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section text-white d-flex align-items-center justify-content-center text-center py-5">
+        <div class="container px-4 py-5">
+            <h1 class="display-4 fw-bold mb-3">About <span class="text-info">Us</span></h1>
+            <p class="lead mb-0 opacity-75 mx-auto" style="max-width: 600px;">
+                Discover the story behind the AI & Innovation Club and meet the people driving the future of technology.
+            </p>
+        </div>
+    </header>
+
+    <section class="py-5 content-section">
+        <div class="container py-4">
+            <div class="row align-items-center">
+                <div class="col-lg-6 order-2 order-lg-1 mt-4 mt-lg-0">
+                    <span class="text-primary fw-bold text-uppercase tracking-wider">Our Origin</span>
+                    <h2 class="fw-bold display-6 mb-4">A History of Innovation</h2>
+                    <p class="text-muted lead" style="text-align: justify;">
+                        Founded in 2021, the AI & Innovation Club started with a small group of passionate tech enthusiasts looking to demystify artificial intelligence on campus.
+                    </p>
+                    <p class="text-muted" style="text-align: justify;">
+                        What began as casual weekend study groups discussing neural networks quickly evolved into a university-wide hub for hands-on machine learning, hackathons, and industry partnerships. Today, we stand over 500 members strong, dedicated to exploring the ethical, practical, and futuristic applications of AI.
+                    </p>
+                    <div class="row mt-4">
+                        <div class="col-6">
+                            <h3 class="fw-bold stat-number">50+</h3>
+                            <p class="text-muted small">Projects Completed</p>
+                        </div>
+                        <div class="col-6">
+                            <h3 class="fw-bold stat-number">500+</h3>
+                            <p class="text-muted small">Active Members</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 order-1 order-lg-2">
+                    <img src="image/aboutus_banner.jpg" class="img-fluid rounded-4 shadow-lg" alt="Students working together on laptops">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="gray-bg">
+        <div class="container">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Organizational Structure</h2>
+                <p class="text-muted">How we collaborate to build, learn, and grow.</p>
+            </div>
+            
+            <div class="row g-4 text-center justify-content-center">
+                <div class="col-md-4">
+                    <div class="org-node">
+                        <div class="text-primary mb-2"><i class="bi bi-star-fill fs-3"></i></div>
+                        <h5 class="fw-bold">Faculty Advisory</h5>
+                        <p class="text-muted small mb-0">Professors and industry experts providing academic and professional guidance.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="org-node">
+                        <div class="text-danger mb-2"><i class="bi bi-diagram-3-fill fs-3"></i></div>
+                        <h5 class="fw-bold">Executive Board</h5>
+                        <p class="text-muted small mb-0">President, VP, and directors leading the club's vision and operations.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="org-node">
+                        <div class="text-success mb-2"><i class="bi bi-code-square fs-3"></i></div>
+                        <h5 class="fw-bold">Project Teams</h5>
+                        <p class="text-muted small mb-0">Dedicated pods of developers, data scientists, and designers building solutions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 content-section">
+        <div class="container py-4">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">Meet the Core Team</h2>
+                <p class="text-muted">The legendary leaders and innovators driving our vision forward.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 feature-card shadow-sm text-center border-0 rounded-4 overflow-visible">
+                        <div class="card-header-bg" style="background: linear-gradient(135deg, #179E73 0%, #106c4f 100%);"></div>
+                        <div class="card-body px-4 pb-4 pt-0">
+                            <img src="image/aboutus_profilepic_doofenshmirtz.jpg" alt="Dr. Heinz Doofenshmirtz" class="profile-img mx-auto d-block">
+                            <h5 class="fw-bold mt-3 mb-1">Dr. Heinz Doofenshmirtz</h5>
+                            <span class="badge bg-success mb-3">Faculty Mentor</span>
+                            <p class="text-muted small mb-3">Founder of Doofenshmirtz Evil Inc. Specializes in building "-inator" devices and lecturing on the Tri-State Area's tech ecosystem.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="https://phineasandferb.fandom.com/wiki/Heinz_Doofenshmirtz" target="_blank" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 feature-card shadow-sm text-center border-0 rounded-4 overflow-visible">
+                        <div class="card-header-bg" style="background: linear-gradient(135deg, #0ce6f2 0%, #0898a1 100%);"></div>
+                        <div class="card-body px-4 pb-4 pt-0">
+                            <img src="image/aboutus_profilepic_ricksanchez.png" alt="Rick Sanchez" class="profile-img mx-auto d-block">
+                            <h5 class="fw-bold mt-3 mb-1">Rick Sanchez</h5>
+                            <span class="badge bg-info text-dark mb-3">Club President</span>
+                            <p class="text-muted small mb-3">Genius inventor and dimensional traveler. Leads our chaotic tech initiatives, portal physics research, and microverse batteries.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="https://rickandmorty.fandom.com/wiki/Rick_Sanchez" target="_blank" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 feature-card shadow-sm text-center border-0 rounded-4 overflow-visible">
+                        <div class="card-header-bg" style="background: linear-gradient(135deg, #d39e00 0%, #8a6d00 100%);"></div>
+                        <div class="card-body px-4 pb-4 pt-0">
+                            <img src="image/aboutus_profilepic_heimerdinger.jpg" alt="Professor Heimerdinger" class="profile-img mx-auto d-block">
+                            <h5 class="fw-bold mt-3 mb-1">Prof. Heimerdinger</h5>
+                            <span class="badge bg-warning text-dark mb-3">VP of Operations</span>
+                            <p class="text-muted small mb-3">Revered Yordle scientist from Piltover. Ensures our Hextech operations, neural networks, and automated turrets function flawlessly.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="https://arcane.fandom.com/wiki/Cecil_B._Heimerdinger" target="_blank" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <div class="card h-100 feature-card shadow-sm text-center border-0 rounded-4 overflow-visible">
+                        <div class="card-header-bg" style="background: linear-gradient(135deg, #dc3545 0%, #a71d2a 100%);"></div>
+                        <div class="card-body px-4 pb-4 pt-0">
+                            <img src="image/aboutus_profilepic_oak.jpg" alt="Professor Oak" class="profile-img mx-auto d-block">
+                            <h5 class="fw-bold mt-3 mb-1">Professor Oak</h5>
+                            <span class="badge bg-danger mb-3">Head of Projects</span>
+                            <p class="text-muted small mb-3">Leading researcher of Pokémon biology. Mentors project pods and provides beginner Pokedex technology to aspiring developers.</p>
+                            <div class="d-flex justify-content-center gap-2">
+                                <a href="https://bulbapedia.bulbagarden.net/wiki/Professor_Oak" target="_blank" class="text-secondary"><i class="bi bi-envelope"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-4 text-center">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 AI & Innovation Club. All rights reserved.</p>
+            <div class="mt-2">
+                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i class="bi bi-github fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i class="bi bi-discord fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 text-decoration-none"><i class="bi bi-linkedin fs-5"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
