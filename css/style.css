@@ -32,6 +32,15 @@ body {
     padding: 90px 0 80px 0;
 }
 
+.hero-section.hero-fullscreen {
+    min-height: calc(100vh - 56px); 
+    padding: 0 !important;
+    margin: 0 !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 @keyframes gradientMove {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
