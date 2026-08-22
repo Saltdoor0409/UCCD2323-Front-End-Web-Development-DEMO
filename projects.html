@@ -13,6 +13,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
@@ -53,7 +55,7 @@
 
     <header class="hero-section text-white d-flex align-items-center justify-content-center text-center py-5">
         <div class="container px-4 py-5">
-            <h1 class="display-4 fw-bold mb-3">Projects</h1>
+            <h1 class="display-4 fw-bold mb-3">AI & ML <span class="text-info">Projects</span></h1>
             <p class="lead mb-0 opacity-75 mx-auto" style="max-width: 600px;">
                 Explore the projects provided by our committee members.
             </p>
@@ -62,11 +64,15 @@
 
     <main class="container my-5">
         <div class="d-flex flex-wrap justify-content-between align-items-center mb-4 gap-3">
-            <div class="btn-group flex-wrap" role="group" id="filter-buttons">
-                <button type="button" class="btn btn-primary filter-btn active" data-filter="all">All Projects</button>
-                <button type="button" class="btn btn-outline-primary filter-btn" data-filter="cv">Computer Vision</button>
-                <button type="button" class="btn btn-outline-primary filter-btn" data-filter="nlp">NLP / LLMs</button>
-                <button type="button" class="btn btn-outline-primary filter-btn" data-filter="robotics">Robotics</button>
+            <div class="d-flex flex-wrap gap-2" id="filter-buttons">
+                <button type="button" class="btn btn-primary filter-btn rounded-3 active" data-filter="all">All
+                    Projects</button>
+                <button type="button" class="btn btn-outline-primary filter-btn rounded-3" data-filter="cv">Computer
+                    Vision</button>
+                <button type="button" class="btn btn-outline-primary filter-btn rounded-3" data-filter="nlp">NLP /
+                    LLMs</button>
+                <button type="button" class="btn btn-outline-primary filter-btn rounded-3"
+                    data-filter="robotics">Robotics</button>
             </div>
             <button id="show-saved-btn" class="btn btn-outline-danger rounded-pill fw-semibold">
                 <i class="bi bi-heart-fill me-1"></i> Saved Projects (<span id="saved-count">0</span>)
@@ -74,16 +80,37 @@
         </div>
 
         <div class="row g-4" id="projects-container">
+
         </div>
+
+        <section class="mt-5 pt-4 border-top">
+            <h4 class="fw-bold mb-3"><i class="bi bi-share me-2 text-primary"></i>Community Discussion</h4>
+            <div class="card p-3 shadow-sm bg-body-tertiary">
+                <p class="small text-secondary mb-2">Share or discuss these projects with the club community:</p>
+                <div class="d-flex gap-2 flex-wrap">
+                    <a href="https://twitter.com/intent/tweet?text=Check%20out%20these%20AI%20projects!" target="_blank"
+                        class="btn btn-sm btn-dark rounded-pill">
+                        <i class="bi bi-twitter-x me-1"></i> Share on X
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/" target="_blank"
+                        class="btn btn-sm btn-primary rounded-pill">
+                        <i class="bi bi-linkedin me-1"></i> Share on LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="bg-dark text-white py-4 text-center">
         <div class="container">
             <p class="mb-0">&copy; 2026 AI & Innovation Club. All rights reserved.</p>
             <div class="mt-2">
-                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i class="bi bi-github fs-5"></i></a>
-                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i class="bi bi-discord fs-5"></i></a>
-                <a href="contact.html" class="text-white-50 text-decoration-none"><i class="bi bi-linkedin fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i
+                        class="bi bi-github fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i
+                        class="bi bi-discord fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 text-decoration-none"><i
+                        class="bi bi-linkedin fs-5"></i></a>
             </div>
         </div>
     </footer>
@@ -100,8 +127,8 @@
                 badge: "Robotics & CV",
                 author: "Alex Wong",
                 description: "Real-time obstacle avoidance and path planning algorithm running on embedded Edge AI hardware.",
-                image: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?auto=format&fit=crop&w=600&q=80",
-                githubUrl: "https://github.com/ai-club/autonomous-drone"
+                image: "image/project.drone.avif",
+                repoPath: "facebookresearch/detectron2"
             },
             {
                 id: "proj-2",
@@ -110,18 +137,18 @@
                 badge: "Computer Vision",
                 author: "Sarah Chen",
                 description: "Convolutional Neural Network (CNN) designed to detect early signs of retinal disease from fundus scans.",
-                image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=600&q=80",
-                githubUrl: "https://github.com/ai-club/medical-imaging-diagnostics"
+                image: "image/project.medical.avif",
+                repoPath: "opencv/opencv"
             },
             {
                 id: "proj-3",
                 title: "Campus AI Assistant",
                 category: "nlp",
                 badge: "NLP / LLMs",
-                author: "Michael Lee",
+                author: "Professor Oak",
                 description: "Retrieval-Augmented Generation (RAG) chatbot trained on university course documentation and schedules.",
-                image: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?auto=format&fit=crop&w=600&q=80",
-                githubUrl: "https://github.com/ai-club/campus-rag-assistant"
+                image: "image/project.campusAI.avif",
+                repoPath: "langchain-ai/langchain"
             },
             {
                 id: "proj-4",
@@ -130,8 +157,8 @@
                 badge: "Computer Vision",
                 author: "Priya Patel",
                 description: "Facial landmark tracking combined with lightweight classification models running directly in web browsers.",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
-                githubUrl: "https://github.com/ai-club/emotion-detector-js"
+                image: "image/project.emotion.avif",
+                repoPath: "justadudewhohacks/face-api.js"
             },
             {
                 id: "proj-5",
@@ -139,31 +166,56 @@
                 category: "nlp",
                 badge: "NLP",
                 author: "Saltdoor0409",
-                description: "Fine-tuned open-source model that automatically solves Sudoku puzzles.",
+                description: "Fine-tuned open-source algorithm that automatically solves Sudoku puzzles.",
                 image: "image/project.code.avif",
-                githubUrl: "https://github.com/Saltdoor0409/Sudoku-Solver-with-Java-GUI-Version-"
+                repoPath: "Saltdoor0409/Sudoku-Solver-with-Java-GUI-Version-"
             },
             {
                 id: "proj-6",
                 title: "Robotic Arm Sorting System",
                 category: "robotics",
                 badge: "Robotics",
-                author: "Elena Rostova",
+                author: "Rick Sanchez",
                 description: "Industrial arm powered by reinforcement learning to automatically categorize recyclable materials.",
                 image: "image/project.robot.png",
-                githubUrl: "https://github.com/ai-club/robotic-arm-sorting"
+                repoPath: "ros-planning/moveit"
+            },
+            {
+                id: "proj-7",
+                title: "IntelliLab",
+                category: "nlp",
+                badge: "LLMs",
+                author: "Wong Yan Kai",
+                description: "A project built for Artificial Intelligence.",
+                image: "image/project.intelli.jpg",
+                repoPath: "wongyankaiUtar/intellilab-society"
             }
         ];
 
-        const STORAGE_KEY = 'ai_club_favorite_projects';
+        function setCookie(name, value, days) {
+            const d = new Date();
+            d.setTime(d.getTime() + (days * 24 * 60 * 60 * 1000));
+            document.cookie = `${name}=${value};expires=${d.toUTCString()};path=/`;
+        }
 
+        function getCookie(name) {
+            const nameEQ = name + "=";
+            const ca = document.cookie.split(';');
+            for (let i = 0; i < ca.length; i++) {
+                let c = ca[i].trim();
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return null;
+        }
+
+        const LOCAL_STORAGE_KEY = 'ai_club_favorite_projects';
         function getSavedProjects() {
-            const saved = localStorage.getItem(STORAGE_KEY);
+            const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
             return saved ? JSON.parse(saved) : [];
         }
 
         function saveProjectsToStorage(savedArray) {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(savedArray));
+            localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(savedArray));
             updateSavedBadgeCount();
         }
 
@@ -180,14 +232,40 @@
 
         function updateSavedBadgeCount() {
             const saved = getSavedProjects();
-            document.getElementById('saved-count').innerText = saved.length;
+            $('#saved-count').text(saved.length);
         }
 
-        let currentFilter = 'all';
+        let currentFilter = sessionStorage.getItem('proj_filter') || 'all';
         let showOnlySaved = false;
+        let currentPage = 1;
+        const itemsPerPage = 3;
+
+        function fetchRepoMetrics(repoPath, cardId) {
+            $.ajax({
+                url: `https://api.github.com/repos/${repoPath}`,
+                type: 'GET',
+                dataType: 'json',
+                success: function (data) {
+                    $(`#api-stats-${cardId}`).html(`
+                        <span class="badge bg-dark me-1"><i class="bi bi-star-fill text-warning me-1"></i>${data.stargazers_count}</span>
+                        <span class="badge bg-dark me-1"><i class="bi bi-diagram-2 me-1"></i>${data.forks_count}</span>
+                        <a href="${data.html_url}" target="_blank" class="btn btn-sm btn-outline-dark rounded-pill ms-auto">
+                            <i class="bi bi-github me-1"></i> Code
+                        </a>
+                    `);
+                },
+                error: function () {
+                    $(`#api-stats-${cardId}`).html(`
+                        <a href="https://github.com/${repoPath}" target="_blank" class="btn btn-sm btn-outline-dark rounded-pill ms-auto">
+                            <i class="bi bi-github me-1"></i> Code
+                        </a>
+                    `);
+                }
+            });
+        }
 
         function renderProjects() {
-            const container = document.getElementById('projects-container');
+            const $container = $('#projects-container');
             const savedIds = getSavedProjects();
 
             const filteredProjects = projects.filter(project => {
@@ -197,79 +275,110 @@
             });
 
             if (filteredProjects.length === 0) {
-                container.innerHTML = `
+                $container.html(`
                     <div class="col-12 text-center py-5">
                         <i class="bi bi-journal-x display-1 text-muted"></i>
                         <h4 class="mt-3 text-muted">No projects found.</h4>
                         <p class="text-secondary">${showOnlySaved ? "You haven't saved any projects in this category yet." : "Check back later for new updates!"}</p>
                     </div>
-                `;
+                `);
                 return;
             }
 
-            container.innerHTML = filteredProjects.map(project => {
+            const totalPages = Math.ceil(filteredProjects.length / itemsPerPage);
+            if (currentPage > totalPages) currentPage = 1;
+
+            const startIndex = (currentPage - 1) * itemsPerPage;
+            const paginatedProjects = filteredProjects.slice(startIndex, startIndex + itemsPerPage);
+
+            const cardsHTML = paginatedProjects.map(project => {
                 const isSaved = savedIds.includes(project.id);
                 return `
                     <div class="col-md-6 col-lg-4">
-                        <div class="card h-100 shadow-sm project-card position-relative">
+                        <div class="card h-100 shadow-sm project-card position-relative border-0 rounded-3">
                             <button 
-                                class="bookmark-btn ${isSaved ? 'active' : ''}" 
+                                class="btn btn-sm btn-light position-absolute top-0 end-0 m-2 rounded-circle shadow-sm ${isSaved ? 'text-danger' : 'text-muted'}" 
                                 onclick="toggleFavorite('${project.id}')"
                                 title="${isSaved ? 'Remove from favorites' : 'Bookmark project'}"
-                                aria-label="Bookmark project"
+                                style="z-index: 2;"
                             >
                                 <i class="bi ${isSaved ? 'bi-heart-fill' : 'bi-heart'}"></i>
                             </button>
-                            <img src="${project.image}" class="card-img-top" alt="${project.title}" style="height: 200px; object-fit: cover;">
+                            <img src="${project.image}" class="card-img-top rounded-top-3" alt="${project.title}" style="height: 200px; object-fit: cover;">
                             <div class="card-body d-flex flex-column">
                                 <div class="mb-2">
                                     <span class="badge bg-primary opacity-75">${project.badge}</span>
                                 </div>
-                                <h5 class="card-title fw-bold text-dark">${project.title}</h5>
+                                <h5 class="card-title fw-bold">${project.title}</h5>
                                 <p class="card-text text-secondary flex-grow-1">${project.description}</p>
-                                <div class="pt-3 border-top mt-auto d-flex justify-content-between align-items-center">
-                                    <small class="text-muted"><i class="bi bi-person me-1"></i>${project.author}</small>
-                                    ${project.githubUrl ? `
-                                        <a href="${project.githubUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-outline-dark rounded-pill">
-                                            <i class="bi bi-github me-1"></i> Code
-                                        </a>
-                                    ` : ''}
+                                <div class="pt-2 border-top mt-auto">
+                                    <small class="text-muted d-block mb-2"><i class="bi bi-person me-1"></i>${project.author}</small>
+                                    <div class="d-flex align-items-center" id="api-stats-${project.id}">
+                                        <span class="spinner-border spinner-border-sm text-secondary" role="status"></span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 `;
             }).join('');
+
+            let paginationHTML = '';
+            if (totalPages > 1) {
+                paginationHTML = `
+                    <div class="col-12 mt-4 d-flex justify-content-center">
+                        <nav aria-label="Page navigation">
+                            <ul class="pagination">
+                                <li class="page-item ${currentPage === 1 ? 'disabled' : ''}">
+                                    <button class="page-link" onclick="changePage(${currentPage - 1})">Previous</button>
+                                </li>
+                                ${Array.from({ length: totalPages }, (_, i) => `
+                                    <li class="page-item ${currentPage === i + 1 ? 'active' : ''}">
+                                        <button class="page-link" onclick="changePage(${i + 1})">${i + 1}</button>
+                                    </li>
+                                `).join('')}
+                                <li class="page-item ${currentPage === totalPages ? 'disabled' : ''}">
+                                    <button class="page-link" onclick="changePage(${currentPage + 1})">Next</button>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                `;
+            }
+
+            $container.html(cardsHTML + paginationHTML);
+            paginatedProjects.forEach(p => fetchRepoMetrics(p.repoPath, p.id));
         }
 
-        document.getElementById('filter-buttons').addEventListener('click', (e) => {
-            if (e.target.classList.contains('filter-btn')) {
-                document.querySelectorAll('.filter-btn').forEach(btn => {
-                    btn.classList.remove('btn-primary', 'active');
-                    btn.classList.add('btn-outline-primary');
-                });
-                e.target.classList.remove('btn-outline-primary');
-                e.target.classList.add('btn-primary', 'active');
-
-                currentFilter = e.target.getAttribute('data-filter');
-                renderProjects();
-            }
-        });
-
-        document.getElementById('show-saved-btn').addEventListener('click', function() {
-            showOnlySaved = !showOnlySaved;
-            if (showOnlySaved) {
-                this.classList.remove('btn-outline-danger');
-                this.classList.add('btn-danger');
-            } else {
-                this.classList.remove('btn-danger');
-                this.classList.add('btn-outline-danger');
-            }
+        function changePage(pageNumber) {
+            currentPage = pageNumber;
             renderProjects();
-        });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
 
-        document.addEventListener('DOMContentLoaded', () => {
+        $(document).ready(function () {
+            setCookie('last_visited_page', 'projects.html', 7);
             updateSavedBadgeCount();
+
+            $(`.filter-btn[data-filter="${currentFilter}"]`).removeClass('btn-outline-primary').addClass('btn-primary active');
+
+            $('#filter-buttons').on('click', '.filter-btn', function () {
+                $('.filter-btn').removeClass('btn-primary active').addClass('btn-outline-primary');
+                $(this).removeClass('btn-outline-primary').addClass('btn-primary active');
+
+                currentFilter = $(this).attr('data-filter');
+                sessionStorage.setItem('proj_filter', currentFilter);
+                currentPage = 1;
+                renderProjects();
+            });
+
+            $('#show-saved-btn').on('click', function () {
+                showOnlySaved = !showOnlySaved;
+                $(this).toggleClass('btn-outline-danger btn-danger');
+                currentPage = 1;
+                renderProjects();
+            });
+
             renderProjects();
         });
     </script>
