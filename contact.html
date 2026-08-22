@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-    
+
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="css/style.css">
@@ -34,7 +34,7 @@
                     <li class="nav-item"><a class="nav-link" href="ai-news.html">AI News</a></li>
                     <li class="nav-item"><a class="nav-link" href="tutorials.html">Tutorials</a></li>
                     <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
-                    
+
                     <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
                         <button id="theme-toggle" class="btn btn-outline-light btn-sm rounded-pill px-3">
                             <i class="bi bi-moon-stars-fill me-1"></i> Theme
@@ -43,7 +43,7 @@
 
                     <li class="nav-item ms-lg-2 mt-2 mt-lg-0 d-flex align-items-center" id="auth-nav-container">
                         <a class="btn btn-outline-info btn-sm rounded-pill px-3 fw-semibold" href="login.html">
-                            <i class="bi bi-box-arrow-in-right me-1"></i> Login 
+                            <i class="bi bi-box-arrow-in-right me-1"></i> Login
                         </a>
                     </li>
                 </ul>
@@ -63,8 +63,9 @@
             <div class="col-lg-6">
                 <div class="glass-card p-4 p-md-5 h-100">
                     <h3 class="fw-bold mb-2">Member Registration</h3>
-                    <p class="text-muted small mb-4">Your draft is auto-saved locally. <span id="save-status" class="text-success fw-bold" style="display:none;">Saved!</span></p>
-                    
+                    <p class="text-muted small mb-4">Your draft is auto-saved locally. <span id="save-status"
+                            class="text-success fw-bold" style="display:none;">Saved!</span></p>
+
                     <form id="registrationForm" class="needs-validation" novalidate>
                         <div class="mb-3">
                             <label class="form-label fw-semibold">Full Name</label>
@@ -74,7 +75,8 @@
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-semibold">University Email</label>
-                            <input type="email" class="form-control" id="userEmail" placeholder="student@domain.edu" required>
+                            <input type="email" class="form-control" id="userEmail" placeholder="student@domain.edu"
+                                required>
                             <div class="invalid-feedback">Please provide a valid email address.</div>
                         </div>
                         <div class="mb-4">
@@ -96,57 +98,67 @@
             <div class="col-lg-6">
                 <div class="glass-card p-4 p-md-5 h-100">
                     <h3 class="fw-bold mb-4">Our Headquarters</h3>
-                    
+
                     <div class="ratio ratio-16x9 mb-4 rounded-3 overflow-hidden shadow-sm">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127482.68658826727!2d101.61694936306308!3d3.1385035544710183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362bfc0402ce%3A0xb5e0c52bb1978255!2sKuala%20Lumpur%2C%20Federal%20Territory%20of%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1716900000000!5m2!1sen!2smy" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127482.68658826727!2d101.61694936306308!3d3.1385035544710183!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31cc362bfc0402ce%3A0xb5e0c52bb1978255!2sKuala%20Lumpur%2C%20Federal%20Territory%20of%20Kuala%20Lumpur!5e0!3m2!1sen!2smy!4v1716900000000!5m2!1sen!2smy"
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
 
-                    <div class="d-flex align-items-center justify-content-between">
+                    <div class="d-flex flex-wrap justify-content-between align-items-start gap-3 pt-3 border-top">
                         <div>
-                            <h6 class="fw-bold mb-1 d-flex align-items-center">
-                                <i class="bi bi-geo-alt-fill text-danger me-2"></i>Address
-                                <span id="api-weather-badge" class="badge bg-info text-dark ms-2 fw-semibold">
+                            <h6 class="fw-bold mb-1 d-flex align-items-center flex-wrap gap-2">
+                                <span><i class="bi bi-geo-alt-fill text-danger me-1"></i>Address</span>
+                                <span id="api-weather-badge" class="badge bg-info text-dark fw-semibold">
                                     <i class="bi bi-hourglass-split spinner-border-sm"></i> Fetching weather...
                                 </span>
                             </h6>
                             <p class="text-muted small mb-0">Innovation Hub, Block C<br>Kuala Lumpur, Malaysia</p>
                         </div>
-                        
-                        <div>
-                            <h6 class="fw-bold mb-2 text-end">Share</h6>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=https://saltdoor0409.github.io/UCCD2323-Front-End-Web-Development-DEMO/index.html" target="_blank" class="social-share-btn bg-primary text-decoration-none" title="Share on Facebook">
-                                <i class="bi bi-facebook"></i>
-                            </a>
-                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://saltdoor0409.github.io/UCCD2323-Front-End-Web-Development-DEMO/index.html" target="_blank" class="social-share-btn text-decoration-none ms-2" style="background-color: #0077b5;" title="Share on LinkedIn">
-                                <i class="bi bi-linkedin"></i>
-                            </a>
+
+                        <div class="text-end">
+                            <h6 class="fw-bold mb-2">Share</h6>
+                            <div class="d-flex justify-content-end align-items-center gap-2">
+                                <a href="https://www.facebook.com/sharer/sharer.php?u=https://example.com"
+                                    target="_blank" class="social-share-btn bg-primary text-decoration-none"
+                                    title="Share on Facebook">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://example.com"
+                                    target="_blank" class="social-share-btn bg-linkedin text-decoration-none"
+                                    title="Share on LinkedIn">
+                                    <i class="bi bi-linkedin"></i>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
     </section>
 
-        <div id="cookie-banner" class="shadow-lg align-items-center justify-content-between rounded-4 p-3">
-            <div class="mb-3 mb-md-0 me-md-4">
-                <strong class="d-block d-md-inline mb-1 mb-md-0">
-                    <i class="bi bi-cookie me-2 text-warning fs-5"></i>We use cookies!
-                </strong>
-                <span class="small cookie-desc ms-md-1">We use cookies to save your theme preferences and track
-                    analytics.</span>
-            </div>
-            <button type="button" id="accept-cookies" class="btn btn-sm px-4 rounded-pill text-nowrap">
-                Got it!
-            </button>
+    <div id="cookie-banner" class="shadow-lg align-items-center justify-content-between rounded-4 p-3">
+        <div class="mb-3 mb-md-0 me-md-4">
+            <strong class="d-block d-md-inline mb-1 mb-md-0">
+                <i class="bi bi-cookie me-2 text-warning fs-5"></i>We use cookies!
+            </strong>
+            <span class="small cookie-desc ms-md-1">We use cookies to save your theme preferences and track
+                analytics.</span>
         </div>
+        <button type="button" id="accept-cookies" class="btn btn-sm px-4 rounded-pill text-nowrap">
+            Got it!
+        </button>
+    </div>
 
     <footer class="bg-dark text-white py-4 text-center mt-auto">
         <div class="container">
             <p class="mb-0">&copy; 2026 AI & Innovation Club. All rights reserved.</p>
             <div class="mt-2">
-                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i class="bi bi-github fs-5"></i></a>
-                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i class="bi bi-discord fs-5"></i></a>
-                <a href="contact.html" class="text-white-50 text-decoration-none"><i class="bi bi-linkedin fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i
+                        class="bi bi-github fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 me-3 text-decoration-none"><i
+                        class="bi bi-discord fs-5"></i></a>
+                <a href="contact.html" class="text-white-50 text-decoration-none"><i
+                        class="bi bi-linkedin fs-5"></i></a>
             </div>
         </div>
     </footer>
@@ -155,86 +167,86 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/main.js"></script>
 
-<script>
-    
-    function initCookieBanner() {
-        const banner = document.getElementById("cookie-banner");
-        const acceptBtn = document.getElementById("accept-cookies");
-        if (!banner || !acceptBtn) return;
+    <script>
+
+        function initCookieBanner() {
+            const banner = document.getElementById("cookie-banner");
+            const acceptBtn = document.getElementById("accept-cookies");
+            if (!banner || !acceptBtn) return;
 
 
-        if (getCookie("siteConsent") === "accepted") {
-            banner.style.setProperty("display", "none", "important");
-            return;
-        }
-
-
-        banner.style.setProperty("display", "flex", "important");
-
-
-        acceptBtn.onclick = function (e) {
-            e.preventDefault();
-            e.stopPropagation();
-            setCookie("siteConsent", "accepted", 30);
-            banner.style.setProperty("display", "none", "important");
-        };
-    }
-
-    document.addEventListener("DOMContentLoaded", initCookieBanner);
-
-
-    $(document).ready(function () {
-
-        if (sessionStorage.getItem('draft_name')) $('#fullName').val(sessionStorage.getItem('draft_name'));
-        if (sessionStorage.getItem('draft_email')) $('#userEmail').val(sessionStorage.getItem('draft_email'));
-        if (sessionStorage.getItem('draft_interest')) $('#primaryInterest').val(sessionStorage.getItem('draft_interest'));
-
-
-        $('#fullName, #userEmail, #primaryInterest').on('input change', function () {
-            sessionStorage.setItem('draft_name', $('#fullName').val());
-            sessionStorage.setItem('draft_email', $('#userEmail').val());
-            sessionStorage.setItem('draft_interest', $('#primaryInterest').val());
-            $('#save-status').stop(true, true).fadeIn(200).fadeOut(1500);
-        });
-
-  
-        $('#registrationForm').on('submit', function (event) {
-            if (!this.checkValidity()) {
-                event.preventDefault();
-                event.stopPropagation();
-            } else {
-                event.preventDefault();
-                alert("Application Submitted Successfully!");
-                sessionStorage.removeItem('draft_name');
-                sessionStorage.removeItem('draft_email');
-                sessionStorage.removeItem('draft_interest');
-                this.reset();
-                $(this).removeClass('was-validated');
+            if (getCookie("siteConsent") === "accepted") {
+                banner.style.setProperty("display", "none", "important");
                 return;
             }
-            $(this).addClass('was-validated');
-        });
 
-        // Fetch weather data for Kuala Lumpur using Open-Meteo API
-        $.ajax({
-            url: "https://api.open-meteo.com/v1/forecast?latitude=3.1390&longitude=101.6869&current_weather=true",
-            method: "GET",
-            success: function (response) {
-                let temp = response.current_weather.temperature;
-                $('#api-weather-badge')
-                    .removeClass('bg-info text-dark')
-                    .addClass('bg-primary text-white')
-                    .html(`<i class="bi bi-thermometer-half"></i> KL Temp: ${temp}°C`);
-            },
-            error: function () {
-                $('#api-weather-badge')
-                    .removeClass('bg-info')
-                    .addClass('bg-secondary')
-                    .html(`<i class="bi bi-cloud-slash"></i> Weather Unavailable`);
-            }
+
+            banner.style.setProperty("display", "flex", "important");
+
+
+            acceptBtn.onclick = function (e) {
+                e.preventDefault();
+                e.stopPropagation();
+                setCookie("siteConsent", "accepted", 30);
+                banner.style.setProperty("display", "none", "important");
+            };
+        }
+
+        document.addEventListener("DOMContentLoaded", initCookieBanner);
+
+
+        $(document).ready(function () {
+
+            if (sessionStorage.getItem('draft_name')) $('#fullName').val(sessionStorage.getItem('draft_name'));
+            if (sessionStorage.getItem('draft_email')) $('#userEmail').val(sessionStorage.getItem('draft_email'));
+            if (sessionStorage.getItem('draft_interest')) $('#primaryInterest').val(sessionStorage.getItem('draft_interest'));
+
+
+            $('#fullName, #userEmail, #primaryInterest').on('input change', function () {
+                sessionStorage.setItem('draft_name', $('#fullName').val());
+                sessionStorage.setItem('draft_email', $('#userEmail').val());
+                sessionStorage.setItem('draft_interest', $('#primaryInterest').val());
+                $('#save-status').stop(true, true).fadeIn(200).fadeOut(1500);
+            });
+
+
+            $('#registrationForm').on('submit', function (event) {
+                if (!this.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                } else {
+                    event.preventDefault();
+                    alert("Application Submitted Successfully!");
+                    sessionStorage.removeItem('draft_name');
+                    sessionStorage.removeItem('draft_email');
+                    sessionStorage.removeItem('draft_interest');
+                    this.reset();
+                    $(this).removeClass('was-validated');
+                    return;
+                }
+                $(this).addClass('was-validated');
+            });
+
+            // Fetch weather data for Kuala Lumpur using Open-Meteo API
+            $.ajax({
+                url: "https://api.open-meteo.com/v1/forecast?latitude=3.1390&longitude=101.6869&current_weather=true",
+                method: "GET",
+                success: function (response) {
+                    let temp = response.current_weather.temperature;
+                    $('#api-weather-badge')
+                        .removeClass('bg-info text-dark')
+                        .addClass('bg-primary text-white')
+                        .html(`<i class="bi bi-thermometer-half"></i> KL Temp: ${temp}°C`);
+                },
+                error: function () {
+                    $('#api-weather-badge')
+                        .removeClass('bg-info')
+                        .addClass('bg-secondary')
+                        .html(`<i class="bi bi-cloud-slash"></i> Weather Unavailable`);
+                }
+            });
         });
-    });
-</script>
+    </script>
 </body>
 
 </html>
