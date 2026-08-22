@@ -127,13 +127,16 @@
         </div>
     </section>
 
-    <div id="cookie-banner" class="alert alert-dark shadow-lg d-flex flex-column flex-md-row align-items-center justify-content-between rounded-4 p-3 border border-secondary">
-        <div class="mb-3 mb-md-0 me-md-4">
-            <strong><i class="bi bi-cookie me-2 text-warning"></i>We use cookies!</strong> 
-            <span class="small">We use cookies to save your theme preferences and track analytics.</span>
-        </div>
-        <button id="accept-cookies" class="btn btn-primary btn-sm px-4 fw-bold rounded-pill">Got it!</button>
+<div id="cookie-banner"
+    class="alert alert-dark shadow-lg align-items-center justify-content-between rounded-4 p-3 border border-secondary">
+    <div class="mb-3 mb-md-0 me-md-4">
+        <strong><i class="bi bi-cookie me-2 text-warning"></i>We use cookies!</strong>
+        <span class="small text-light">We use cookies to save your theme preferences and track analytics.</span>
     </div>
+    <button type="button" id="accept-cookies" class="btn btn-primary btn-sm px-4 fw-bold rounded-pill text-nowrap">
+        Got it!
+    </button>
+</div>
 
     <footer class="bg-dark text-white py-4 text-center mt-auto">
         <div class="container">
@@ -151,74 +154,85 @@
     <script src="js/main.js"></script>
 
 <script>
-        $(document).ready(function () {
-
-            if (getCookie("siteConsent") === "accepted") {
-                $("#cookie-banner").hide();
-            } else {
-                $("#cookie-banner").css("display", "flex").hide().fadeIn(400);
-            }
+    
+    function initCookieBanner() {
+        const banner = document.getElementById("cookie-banner");
+        const acceptBtn = document.getElementById("accept-cookies");
+        if (!banner || !acceptBtn) return;
 
 
-            $(document).on("click", "#accept-cookies", function (e) {
-                e.preventDefault();
-                setCookie("siteConsent", "accepted", 30);
-                $("#cookie-banner").fadeOut(300);
-            });
+        if (getCookie("siteConsent") === "accepted") {
+            banner.style.setProperty("display", "none", "important");
+            return;
+        }
 
-           
-            if (sessionStorage.getItem('draft_name')) $('#fullName').val(sessionStorage.getItem('draft_name'));
-            if (sessionStorage.getItem('draft_email')) $('#userEmail').val(sessionStorage.getItem('draft_email'));
-            if (sessionStorage.getItem('draft_interest')) $('#primaryInterest').val(sessionStorage.getItem('draft_interest'));
 
-            
-            $('#fullName, #userEmail, #primaryInterest').on('input change', function () {
-                sessionStorage.setItem('draft_name', $('#fullName').val());
-                sessionStorage.setItem('draft_email', $('#userEmail').val());
-                sessionStorage.setItem('draft_interest', $('#primaryInterest').val());
-                $('#save-status').stop(true, true).fadeIn(200).fadeOut(1500);
-            });
+        banner.style.setProperty("display", "flex", "important");
 
-            
-            $('#registrationForm').on('submit', function (event) {
-                if (!this.checkValidity()) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                } else {
-                    event.preventDefault();
-                    alert("✅ Application Submitted Successfully!");
-                    sessionStorage.removeItem('draft_name');
-                    sessionStorage.removeItem('draft_email');
-                    sessionStorage.removeItem('draft_interest');
-                    this.reset();
-                    $(this).removeClass('was-validated');
-                    return;
-                }
-                $(this).addClass('was-validated');
-            });
 
-            //weather api call of Kuala Lumpur
-            const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=3.1390&longitude=101.6869&current_weather=true";
+        acceptBtn.onclick = function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+            setCookie("siteConsent", "accepted", 30);
+            banner.style.setProperty("display", "none", "important");
+        };
+    }
 
-            $.ajax({
-                url: apiUrl,
-                method: "GET",
-                success: function (response) {
-                    let temp = response.current_weather.temperature;
-                    $('#api-weather-badge')
-                        .removeClass('bg-info text-dark')
-                        .addClass('bg-primary text-white')
-                        .html(`<i class="bi bi-thermometer-half"></i> KL Temp: ${temp}°C`);
-                },
-                error: function () {
-                    $('#api-weather-badge')
-                        .removeClass('bg-info')
-                        .addClass('bg-secondary')
-                        .html(`<i class="bi bi-cloud-slash"></i> Weather Unavailable`);
-                }
-            });
+    document.addEventListener("DOMContentLoaded", initCookieBanner);
+
+
+    $(document).ready(function () {
+
+        if (sessionStorage.getItem('draft_name')) $('#fullName').val(sessionStorage.getItem('draft_name'));
+        if (sessionStorage.getItem('draft_email')) $('#userEmail').val(sessionStorage.getItem('draft_email'));
+        if (sessionStorage.getItem('draft_interest')) $('#primaryInterest').val(sessionStorage.getItem('draft_interest'));
+
+
+        $('#fullName, #userEmail, #primaryInterest').on('input change', function () {
+            sessionStorage.setItem('draft_name', $('#fullName').val());
+            sessionStorage.setItem('draft_email', $('#userEmail').val());
+            sessionStorage.setItem('draft_interest', $('#primaryInterest').val());
+            $('#save-status').stop(true, true).fadeIn(200).fadeOut(1500);
         });
-    </script>
+
+  
+        $('#registrationForm').on('submit', function (event) {
+            if (!this.checkValidity()) {
+                event.preventDefault();
+                event.stopPropagation();
+            } else {
+                event.preventDefault();
+                alert("Application Submitted Successfully!");
+                sessionStorage.removeItem('draft_name');
+                sessionStorage.removeItem('draft_email');
+                sessionStorage.removeItem('draft_interest');
+                this.reset();
+                $(this).removeClass('was-validated');
+                return;
+            }
+            $(this).addClass('was-validated');
+        });
+
+        // Fetch weather data for Kuala Lumpur using Open-Meteo API
+        $.ajax({
+            url: "https://api.open-meteo.com/v1/forecast?latitude=3.1390&longitude=101.6869&current_weather=true",
+            method: "GET",
+            success: function (response) {
+                let temp = response.current_weather.temperature;
+                $('#api-weather-badge')
+                    .removeClass('bg-info text-dark')
+                    .addClass('bg-primary text-white')
+                    .html(`<i class="bi bi-thermometer-half"></i> KL Temp: ${temp}°C`);
+            },
+            error: function () {
+                $('#api-weather-badge')
+                    .removeClass('bg-info')
+                    .addClass('bg-secondary')
+                    .html(`<i class="bi bi-cloud-slash"></i> Weather Unavailable`);
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
