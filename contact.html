@@ -150,11 +150,15 @@
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/main.js"></script>
 
-    <script>
+<script>
         $(document).ready(function () {
-            if (!getCookie("siteConsent")) {
+
+            if (getCookie("siteConsent") === "accepted") {
+                $("#cookie-banner").hide();
+            } else {
                 $("#cookie-banner").css("display", "flex").hide().fadeIn(400);
             }
+
 
             $(document).on("click", "#accept-cookies", function (e) {
                 e.preventDefault();
@@ -162,10 +166,12 @@
                 $("#cookie-banner").fadeOut(300);
             });
 
+           
             if (sessionStorage.getItem('draft_name')) $('#fullName').val(sessionStorage.getItem('draft_name'));
             if (sessionStorage.getItem('draft_email')) $('#userEmail').val(sessionStorage.getItem('draft_email'));
             if (sessionStorage.getItem('draft_interest')) $('#primaryInterest').val(sessionStorage.getItem('draft_interest'));
 
+            
             $('#fullName, #userEmail, #primaryInterest').on('input change', function () {
                 sessionStorage.setItem('draft_name', $('#fullName').val());
                 sessionStorage.setItem('draft_email', $('#userEmail').val());
@@ -173,6 +179,7 @@
                 $('#save-status').stop(true, true).fadeIn(200).fadeOut(1500);
             });
 
+            
             $('#registrationForm').on('submit', function (event) {
                 if (!this.checkValidity()) {
                     event.preventDefault();
@@ -190,6 +197,7 @@
                 $(this).addClass('was-validated');
             });
 
+            //weather api call of Kuala Lumpur
             const apiUrl = "https://api.open-meteo.com/v1/forecast?latitude=3.1390&longitude=101.6869&current_weather=true";
 
             $.ajax({
