@@ -120,6 +120,11 @@
             color: #64748b;
         }
 
+        input[type="password"]::-ms-reveal,
+        input[type="password"]::-ms-clear {
+            display: none !important;
+        }
+
         .pwd-toggle-btn {
             background: transparent;
             border: none;
@@ -229,7 +234,7 @@
                 <label class="form-label" for="loginPassword">Password</label>
                 <div class="custom-input-box">
                     <i class="bi bi-lock"></i>
-                    <input type="password" class="form-control" id="loginPassword" placeholder="••••••••" required>
+                    <input type="password" class="form-control" id="loginPassword" placeholder="Enter your password" required>
                     <button type="button" class="pwd-toggle-btn" id="togglePasswordBtn">
                         <i class="bi bi-eye" id="togglePasswordIcon"></i>
                     </button>
