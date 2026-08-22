@@ -1,4 +1,3 @@
-
 function setCookie(name, value, days) {
     let expires = "";
     if (days) {
@@ -7,6 +6,9 @@ function setCookie(name, value, days) {
         expires = "; expires=" + date.toUTCString();
     }
     document.cookie = name + "=" + (value || "") + expires + "; path=/; SameSite=Lax";
+    try {
+        localStorage.setItem(name, value);
+    } catch (e) {}
 }
 
 function getCookie(name) {
@@ -16,17 +18,17 @@ function getCookie(name) {
         let c = ca[i].trim();
         if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
     }
-    return null;
+    try {
+        return localStorage.getItem(name);
+    } catch (e) {
+        return null;
+    }
 }
 
-
 document.addEventListener("DOMContentLoaded", function () {
-    
-
     const themeToggleBtn = document.getElementById("theme-toggle");
     const body = document.body;
 
-    
     if (getCookie("themePref") === "dark") {
         body.classList.add("dark-mode");
         if (themeToggleBtn) {
@@ -34,7 +36,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-   
     if (themeToggleBtn) {
         themeToggleBtn.addEventListener("click", function () {
             body.classList.toggle("dark-mode");
@@ -48,17 +49,14 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // logout logic
     const authContainer = document.getElementById("auth-nav-container");
     if (!authContainer) return;
 
     const isLoggedIn = sessionStorage.getItem("isLoggedIn");
     const activeUser = sessionStorage.getItem("activeUser") || "Member";
 
-
     if (isLoggedIn === "true") {
-        const displayName = activeUser.split("@")[0]; 
-        
+        const displayName = activeUser.split("@")[0];
         authContainer.innerHTML = `
             <div class="d-flex align-items-center gap-2">
                 <span class="text-info small fw-semibold text-nowrap">
@@ -70,11 +68,10 @@ document.addEventListener("DOMContentLoaded", function () {
             </div>
         `;
 
-    
         document.getElementById("logout-btn").addEventListener("click", function () {
             sessionStorage.removeItem("isLoggedIn");
             sessionStorage.removeItem("activeUser");
-            alert("👋 You have been logged out.");
+            alert("You have been logged out.");
             window.location.reload();
         });
     }
