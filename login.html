@@ -257,65 +257,97 @@
         </form>
     </div>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.2.0/crypto-js.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="js/main.js"></script>
 
-    <script>
-        $(document).ready(function () {
-            if (localStorage.getItem("rememberUser") === "true") {
-                $('#loginEmail').val(localStorage.getItem("savedEmail") || "");
-                $('#loginPassword').val(localStorage.getItem("savedPassword") || "");
-                $('#rememberMe').prop('checked', true);
+<script>
+    
+    const SECRET_KEY = "memecat_is_the_best";
+
+
+    function encryptPassword(plainText) {
+        if (!plainText) return "";
+        return CryptoJS.AES.encrypt(plainText, SECRET_KEY).toString();
+    }
+
+    function decryptPassword(cipherText) {
+        if (!cipherText) return "";
+        try {
+            const bytes = CryptoJS.AES.decrypt(cipherText, SECRET_KEY);
+            const originalText = bytes.toString(CryptoJS.enc.Utf8);
+
+           
+            return originalText || cipherText;
+        } catch (e) {
+            return cipherText;
+        }
+    }
+
+    $(document).ready(function () {
+    
+        if (localStorage.getItem("rememberUser") === "true") {
+            $('#loginEmail').val(localStorage.getItem("savedEmail") || "");
+            
+            const encryptedPwd = localStorage.getItem("savedPassword");
+            if (encryptedPwd) {
+                $('#loginPassword').val(decryptPassword(encryptedPwd));
+            }
+            $('#rememberMe').prop('checked', true);
+        }
+
+
+        $('#togglePasswordBtn').on('click', function () {
+            const passwordInput = $('#loginPassword');
+            const icon = $('#togglePasswordIcon');
+            if (passwordInput.attr('type') === 'password') {
+                passwordInput.attr('type', 'text');
+                icon.removeClass('bi-eye').addClass('bi-eye-slash');
+            } else {
+                passwordInput.attr('type', 'password');
+                icon.removeClass('bi-eye-slash').addClass('bi-eye');
+            }
+        });
+
+
+        $('#forgotPasswordLink').on('click', function (e) {
+            e.preventDefault();
+            alert("Please contact club support at junxian0409@1utar.my to reset your password.");
+        });
+
+        
+        $('#loginForm').on('submit', function (e) {
+            e.preventDefault();
+
+            const email = $('#loginEmail').val().trim();
+            const password = $('#loginPassword').val();
+            const isRemembered = $('#rememberMe').is(':checked');
+
+            if (!email || !password) {
+                alert("Please fill in both email and password.");
+                return;
             }
 
-            $('#togglePasswordBtn').on('click', function () {
-                const passwordInput = $('#loginPassword');
-                const icon = $('#togglePasswordIcon');
-                if (passwordInput.attr('type') === 'password') {
-                    passwordInput.attr('type', 'text');
-                    icon.removeClass('bi-eye').addClass('bi-eye-slash');
-                } else {
-                    passwordInput.attr('type', 'password');
-                    icon.removeClass('bi-eye-slash').addClass('bi-eye');
-                }
-            });
+            if (isRemembered) {
+                localStorage.setItem("rememberUser", "true");
+                localStorage.setItem("savedEmail", email);
 
-            $('#forgotPasswordLink').on('click', function (e) {
-                e.preventDefault();
-                alert("Please contact club support at junxian0409@1utar.my to reset your password.");
-            });
+                localStorage.setItem("savedPassword", encryptPassword(password));
+            } else {
+                localStorage.removeItem("rememberUser");
+                localStorage.removeItem("savedEmail");
+                localStorage.removeItem("savedPassword");
+            }
 
-            $('#loginForm').on('submit', function (e) {
-                e.preventDefault();
+            sessionStorage.setItem("isLoggedIn", "true");
+            sessionStorage.setItem("activeUser", email);
 
-                const email = $('#loginEmail').val().trim();
-                const password = $('#loginPassword').val();
-                const isRemembered = $('#rememberMe').is(':checked');
-
-                if (!email || !password) {
-                    alert("Please fill in both email and password.");
-                    return;
-                }
-
-                if (isRemembered) {
-                    localStorage.setItem("rememberUser", "true");
-                    localStorage.setItem("savedEmail", email);
-                    localStorage.setItem("savedPassword", password);
-                } else {
-                    localStorage.removeItem("rememberUser");
-                    localStorage.removeItem("savedEmail");
-                    localStorage.removeItem("savedPassword");
-                }
-
-                sessionStorage.setItem("isLoggedIn", "true");
-                sessionStorage.setItem("activeUser", email);
-
-                alert("Login Successful! Welcome, " + email.split('@')[0]);
-                window.location.href = "index.html";
-            });
+            alert("Login Successful! Welcome, " + email.split('@')[0]);
+            window.location.href = "index.html";
         });
-    </script>
+    });
+</script>
 </body>
 
 </html>
