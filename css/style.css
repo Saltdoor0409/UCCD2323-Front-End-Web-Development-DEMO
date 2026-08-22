@@ -397,3 +397,25 @@ body.dark-mode .btn-close {
     transform: scale(1.05);
     box-shadow: 0 0 15px rgba(0, 210, 255, 0.5);
 }
+
+.social-share-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff !important;
+    font-size: 15px;
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+}
+
+.social-share-btn:hover {
+    transform: scale(1.1);
+    color: #ffffff !important;
+}
+
+.bg-linkedin {
+    background-color: #0077b5 !important;
+}
